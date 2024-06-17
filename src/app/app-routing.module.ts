@@ -1,22 +1,46 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GameListComponent } from './Home/components/feature/game-list/game-list.component';
-import { LoginComponent } from './Login/components/feature/login/login.component';
-import { RegisterComponent } from './Login/components/feature/register/register.component';
-import { GameDetailComponent } from './Home/components/feature/game-detail/game-detail.component';
-import { CartComponent } from './Payement/components/feature/cart/cart.component';
-import { PaymentComponent } from './Payement/components/feature/payment/payment.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: GameListComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'game/:id', component: GameDetailComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'payment', component: PaymentComponent },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./Home/shared/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./Login/shared/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./Login/shared/register.module').then((m) => m.RegisterModule),
+  },
+  {
+    path: 'game/:id',
+    loadChildren: () =>
+      import('./Home/shared/game-detail.module').then(
+        (m) => m.GameDetailModule,
+      ),
+  },
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./Payement/shared/cart.module').then((m) => m.CartModule),
+  },
+  {
+    path: 'payment',
+    loadChildren: () =>
+      import('./Payement/shared/payment.module').then((m) => m.PaymentModule),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule,
+      ),
+  },
 ];
 
 @NgModule({
