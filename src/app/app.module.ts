@@ -12,6 +12,7 @@ import { LoginDumbComponent } from './Login/components/ui/login-dumb/login-dumb.
 import { RegisterDumbComponent } from './Login/components/ui/register-dumb/register-dumb.component';
 import { CartDumbComponent } from './Payement/components/ui/cart-dumb/cart-dumb.component';
 import { PaymentDumbComponent } from './Payement/components/ui/payment-dumb/payment-dumb.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PaymentDumbComponent } from './Payement/components/ui/payment-dumb/paym
     RegisterDumbComponent,
     CartDumbComponent,
     PaymentDumbComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
