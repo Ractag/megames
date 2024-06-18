@@ -16,10 +16,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 @NgModule({
   declarations: [
     AppComponent,
-    GameDetailComponent,
-    GameListDumbComponent,
     GameDetailDumbComponent,
-    RegisterComponent,
     LoginDumbComponent,
     RegisterDumbComponent,
     CartDumbComponent,
